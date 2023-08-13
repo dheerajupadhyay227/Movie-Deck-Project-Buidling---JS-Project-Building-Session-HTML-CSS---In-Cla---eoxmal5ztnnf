@@ -29,7 +29,6 @@ function getClassByRate(vote){
 function showMovies(data) {
     const movies = document.querySelector('.movies');
 
-    //Очищаем предыдущие фильмы
     document.querySelector('.movies').innerHTML = '';
 
     data.films.forEach((movie) => {
@@ -87,17 +86,17 @@ async function openModal(id) {
     <div class="modal__card">
         <img src="${responseData.posterUrl}" alt="" class="modal__movie-backdrop">
         <h2>
-            <span class="modal__movie-title">Название - ${responseData.nameRu}</span>
+            <span class="modal__movie-title">Name - ${responseData.nameRu}</span>
             <span class="modal__movie-release-year">${responseData.year}</span>
         </h2>
         <ul class="modal__movie-info">
             <div class="loader"></div>
-            <li class="modal__movie-genre">Жанр - ${responseData.genres.map((el) => `<span>${el.genre}</span>`)}</li>
-            <li class="modal__movie-runtime">Время - ${responseData.filmLength} минут</li>
-            <li>Сайт: <a href="${responseData.webUrl}" class="modal__movie-site">${responseData.webUrl}</a></li>
-            <li class="modal__movie-overview">Описание - ${responseData.description}</li>
+            <li class="modal__movie-genre">Genre - ${responseData.genres.map((el) => `<span>${el.genre}</span>`)}</li>
+            <li class="modal__movie-runtime">Time - ${responseData.filmLength} минут</li>
+            <li>Site: <a href="${responseData.webUrl}" class="modal__movie-site">${responseData.webUrl}</a></li>
+            <li class="modal__movie-overview">Description - ${responseData.description}</li>
         </ul>
-        <button type="button" class="modal__button-close">Закрыть</button>
+        <button type="button" class="modal__button-close">close</button>
     </div>
     `
     const btnClose = document.querySelector('.modal__button-close');
